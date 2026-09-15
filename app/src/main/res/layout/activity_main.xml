@@ -1,0 +1,15 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="飞书定时启动" android:textSize="28sp" android:textStyle="bold"/>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="仅负责按时打开飞书，不执行自动打卡操作。"/>
+<Switch android:id="@+id/switch_enabled" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="启用定时启动"/>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="上班启动时间" android:textStyle="bold"/>
+<TimePicker android:id="@+id/time_work" android:layout_width="match_parent" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="下班启动时间" android:textStyle="bold"/>
+<TimePicker android:id="@+id/time_off" android:layout_width="match_parent" android:layout_height="wrap_content" android:timePickerMode="spinner"/>
+<Button android:id="@+id/btn_save" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="保存定时任务"/>
+<Button android:id="@+id/btn_test" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="立即测试：打开飞书"/>
+<Button android:id="@+id/btn_exact_alarm" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="允许闹钟和提醒"/>
+<Button android:id="@+id/btn_fullscreen" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="允许全屏通知"/>
+<Button android:id="@+id/btn_battery" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="关闭本应用电池优化"/>
+<TextView android:id="@+id/txt_status" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:textSize="14sp"/>
+</LinearLayout></ScrollView>

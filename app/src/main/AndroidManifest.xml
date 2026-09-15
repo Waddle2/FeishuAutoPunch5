@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/><uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/><uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/><uses-permission android:name="android.permission.WAKE_LOCK"/><uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/><uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+<queries><package android:name="com.ss.android.lark"/></queries>
+<application android:allowBackup="false" android:label="飞书定时启动" android:theme="@style/AppTheme">
+<activity android:name=".LaunchFeishuActivity" android:exported="false" android:showWhenLocked="true" android:turnScreenOn="true" android:excludeFromRecents="true"/>
+<activity android:name=".MainActivity" android:exported="true"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity>
+<receiver android:name=".AlarmReceiver" android:exported="false"/><receiver android:name=".BootReceiver" android:exported="true"><intent-filter><action android:name="android.intent.action.BOOT_COMPLETED"/><action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/></intent-filter></receiver>
+</application></manifest>
