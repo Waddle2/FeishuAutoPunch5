@@ -26,6 +26,12 @@ public class LaunchFeishuActivity extends Activity {
             setTurnScreenOn(true);
         }
         setContentView(new TextView(this));
+        int slot = getIntent().getIntExtra("slot", -1);
+        if (slot >= 0) {
+            android.content.SharedPreferences p = getSharedPreferences(AlarmReceiver.PREF, 0);
+            int h = p.getInt("h" + slot, -1), m = p.getInt("m" + slot, -1);
+            if (h >= 0) AlarmReceiver.scheduleDaily(this, slot, h, m);
+        }
 
         KeyguardManager km = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
         if (km != null && km.isKeyguardLocked() && android.os.Build.VERSION.SDK_INT >= 26) {
@@ -35,13 +41,13 @@ public class LaunchFeishuActivity extends Activity {
                 @Override public void onDismissError() { launchOnce(); }
             });
         }
-        handler.postDelayed(this::launchOnce, 700);
+        handler.postDelayed(this::launchOnce, 1200);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        handler.postDelayed(this::launchOnce, 250);
+        handler.postDelayed(this::launchOnce, 500);
     }
 
     private void launchOnce() {
